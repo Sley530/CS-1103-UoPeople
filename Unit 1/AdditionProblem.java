@@ -30,7 +30,7 @@ public static void main(String args[]) {
 	AdditionProblem exo = new AdditionProblem();
 	int ans, answer;
 
-	do{
+	do {
 	System.out.println(exo.getProblem());
 	 answer = exo.getAnswer();
 	 ans = TextIO.getInt();
