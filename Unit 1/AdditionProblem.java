@@ -28,6 +28,7 @@ public class AdditionProblem {
 	    return "Compute the sum: " + x + " + " + y;
 	    }
 
+
 	    public int getAnswer() {
 	    return answer;
 	    }
