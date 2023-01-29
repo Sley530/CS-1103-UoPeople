@@ -4,6 +4,12 @@
 import textio.TextIO;
 
 /**
+ * This program will help the user to execute
+ * some simple addition operations based random numbers
+ * the program will terminate only if the user provides
+ * the good answer. Otherwise the program will keep asking
+ * the same operation.
+ *
  * @author Sley
  *
  */
