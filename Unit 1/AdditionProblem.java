@@ -37,7 +37,7 @@ public static void main(String args[]) {
 	 System.out.println("Wrong answer.");
 	 System.out.println("Please try again.\n");
 	}
-	while(ans != answer);
+	while (ans != answer);
 
 	if (ans == answer) {
 		System.out.println("CONGRATULATIONS!!!");
