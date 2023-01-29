@@ -1,6 +1,4 @@
-/**
- *
- */
+
 package Unit_1;
 
 import textio.TextIO;
