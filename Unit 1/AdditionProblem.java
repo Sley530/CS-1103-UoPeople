@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package Unit_1;
 
@@ -9,6 +9,7 @@ import textio.TextIO;
  * @author Sley
  *
  */
+
 public class AdditionProblem {
 
 	    private int x,y,answer;
@@ -37,7 +38,7 @@ public static void main(String args[]) {
 	 System.out.println("Please try again.\n");
 	}
 	while(ans != answer);
-	
+
 	if (ans == answer) {
 		System.out.println("CONGRATULATIONS!!!");
 		System.out.println("You won!");
