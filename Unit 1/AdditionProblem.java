@@ -18,6 +18,12 @@ public class AdditionProblem {
 	         answer = x + y;
 	     }
 
+		 /**
+	     * This function will display the operation
+	     * so that the user can answer.
+	     *
+	     * @return operation
+	     */
 	    public String getProblem() {
 	    return "Compute the sum: " + x + " + " + y;
 	    }
