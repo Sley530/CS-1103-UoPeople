@@ -28,7 +28,12 @@ public class AdditionProblem {
 	    return "Compute the sum: " + x + " + " + y;
 	    }
 
-
+		/**
+	     * This function executes the operation and
+	     * return the good answer.
+	     *
+	     * @return answer
+	     */
 	    public int getAnswer() {
 	    return answer;
 	    }
