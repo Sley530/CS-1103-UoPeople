@@ -29,7 +29,7 @@ import java.util.*;
 	 * Selection sort     0.002       	0.095        9.813
 	 * Arrays.sort        0.001       	0.004        0.017
 	 *
-	 * @author
+	 * @author Sley
 	 */
 
 	public class SortingAlgorithms {
