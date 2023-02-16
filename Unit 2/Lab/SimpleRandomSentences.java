@@ -8,32 +8,32 @@
     That married the man all tattered and torn
     That kissed the maiden all forlorn
     That milked the cow with the crumpled horn
-    That tossed the dog 
+    That tossed the dog
     That worried the cat
     That chased the rat
     That ate the cheese
-    That lay in the house that Jack built. 
-    
+    That lay in the house that Jack built.
+
   Some rules that capture the syntax of this verse:
-    
+
     <sentence> ::= <simple_sentence> [ and <sentence> ]
 
     <simple_sentence> ::=  this is [ <noun_phrase> ] the house that Jack built
-    
-    <noun_phrase> ::= the <noun> [ <modifier> ] that <verb> [ <noun_phrase> ]    
+
+    <noun_phrase> ::= the <noun> [ <modifier> ] that <verb> [ <noun_phrase> ]
     <noun> ::= farmer | rooster | judge | man | maiden | cow | dog | cat | cheese
-    
+
     <verb> ::= kept | waked | married | milked | tossed | chased | lay in
-    
+
     <modifier> ::= that crowed in the morn | all shaven and shorn |
                     all tattered and torn | all forlorn | with the crumpled horn
-    
+
   This program implements these rules to generate random sentences.  All the
   verses of the rhyme can be generated, plus a lot of sentences that make no
   sense (but still follow the syntax).   Note that an optional item like
   [ <modifier> ] has a chance of being used, depending on the value of some
   randomly generated number.
-  
+
   The program generates and outputs one random sentence every three seconds until
   it is halted (for example, by typing Control-C in the terminal window where it is
   running).
@@ -44,13 +44,13 @@ public class SimpleRandomSentences {
 
    static final String[] nouns = { "farmer", "rooster", "judge", "man", "maiden",
                                    "cow", "dog", "cat", "cheese" };
-                                   
+
    static final String[] verbs = { "kept", "waked", "married",
                                    "milked", "tossed", "chased", "lay in" };
 
-   static final String[] modifiers = { "that crowed in the morn", "sowing his corn", 
+   static final String[] modifiers = { "that crowed in the morn", "sowing his corn",
                                        "all shaven and shorn",
-                                       "all forlorn", "with the crumpled horn" };                                   
+                                       "all forlorn", "with the crumpled horn" };
 
    public static void main(String[] args) {
       while (true) {
@@ -63,7 +63,7 @@ public class SimpleRandomSentences {
          }
       }
    }
-   
+
    static void randomSentence() {
       System.out.print("this is ");
       if (Math.random() > 0.2)
@@ -74,7 +74,7 @@ public class SimpleRandomSentences {
          randomSentence();
       }
    }
-   
+
    static void randomNounPhrase() {
           int n = (int)(Math.random()*nouns.length);
           int v = (int)(Math.random()*verbs.length);
@@ -87,4 +87,4 @@ public class SimpleRandomSentences {
 	          randomNounPhrase();
    }
 
-}
+} //end of SimpleRandomSentences
