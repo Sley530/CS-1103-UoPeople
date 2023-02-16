@@ -30,6 +30,7 @@ import java.util.*;
 	 * Arrays.sort        0.001       	0.004        0.017
 	 *
 	 * @author Sley
+	 *
 	 */
 
 	public class SortingAlgorithms {
