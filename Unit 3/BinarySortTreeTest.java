@@ -2,21 +2,19 @@ package Unit_3;
 
 import java.util.Random;
 
-/**  
- * This program makes a random binary sort tree containing 1023 random
- * real numbers.  It then computes the height of the tree and the
- * average depth of the leaves of the tree.  Hopefully, the average
- * depth will tend to be close to 9, which is what it would be
- * if the tree were perfectly balanced.  The height of the tree,
- * which is the same as the maximum depth of any leaf, can be
- * significantly larger.
- * 
+/**
+ * This program creates a random binary sorting tree containing 1023 random real numbers.
+ * It then calculates the height of the tree and the average depth of the leaves in the tree.
+ * With any luck, the average depth will tend to be close to 9,
+ * which is what it would be if the tree were perfectly balanced.
+ * The height of the tree, which is the maximum depth of each leaf, may be much higher.
+ *
  * This non-graded Learning Journal Exercise is adapted from
  * David Eck's sample solution found here:
- * 
+ *
  * http://math.hws.edu/eck/cs124/javanotes7/c9/ex5-ans.html
- * 
- * @author 
+ *
+ * @author Paul-Wesley Jeanty
  *
  */
 public class BinarySortTreeTest {
@@ -28,26 +26,26 @@ public class BinarySortTreeTest {
 		double number;     // The data in this node.
 		TreeNode left;     // Pointer to the left subtree.
 		TreeNode right;    // Pointer to the right subtree.
-		
+
 		// Constructor.  Make a node containing the specified number.
 		// Left and right pointers are initially null.
 		TreeNode(double num) {
 			number = num;
 		}
 	}  // end nested class TreeNode
-	
+
 	// Pointer to the root node in a binary tree.
-    // This tree is used in this program as a 
-    // binary sort tree.  When the tree is empty, 
+    // This tree is used in this program as a
+    // binary sort tree.  When the tree is empty,
     // root is null (as it is initially).
 	private static TreeNode root;
-	
+
 	// Instantiate a Random() object.
 	private static Random rGen = new Random();
-	
+
 	/**
 	 * Return the number of leaves in the tree to which node points.
-	 * 
+	 *
 	 * @param node TreeNode for counting leaves.
 	 * @return The number of leaves in the tree.
 	 */
@@ -59,11 +57,11 @@ public class BinarySortTreeTest {
 			if (node.left == null && node.right == null) {
 				return 1;
 			} else {
-				return countLeaves(node.left) + countLeaves(node.right); 
+				return countLeaves(node.left) + countLeaves(node.right);
 			}
 		}
 	}
-	
+
 	/**
 	 * When called as sumLeafDepths(root,0), this will compute the
 	 * sum of the depths of all the leaves in the tree to which root
@@ -82,7 +80,7 @@ public class BinarySortTreeTest {
 				+ sumLeafDepths(node.right, depth + 1);
 		}
 	}
-	
+
    /**
     * When called as maxDepth(root,0), this will compute the
     * max of the depths of all the leaves in the tree to which root
@@ -106,11 +104,11 @@ public class BinarySortTreeTest {
 			}
 		}
 	}
-	
+
 	 /**
-     * Add the item to the binary sort tree to which the global variable 
-     * "root" refers.  (Note that root can't be passed as a parameter to 
-     * this routine because the value of root might change, and a change 
+     * Add the item to the binary sort tree to which the global variable
+     * "root" refers.  (Note that root can't be passed as a parameter to
+     * this routine because the value of root might change, and a change
      * in the value of a formal parameter does not change the actual parameter.)
      */
     private static void treeInsert(double num) {
@@ -149,27 +147,27 @@ public class BinarySortTreeTest {
             }
         } // end while
     }  // end treeInsert()
-    
+
     /**
      * Create the random tree and print the data.
-     * 
+     *
      * @param args Command line args (not used).
      */
     public static void main(String[] args) {
-		
+
     	// Start with an empty tree.  Root is a global
         // variable, defined at the top of the class.
     	root = null;
-    	
+
     	for (int i = 0; i < 1023; i++) {
     		treeInsert(rGen.nextDouble());
     	}
-    	
+
     	int leafCount = countLeaves(root);
     	int sumOfDepths = sumLeafDepths(root, 0);
     	int depthMax = maxDepth(root, 0);
     	double averageDepth = ((double) sumOfDepths / leafCount);
-    	
+
     	System.out.println("Number of leaves: " + leafCount);
     	System.out.println("Average depth of leaves: " + averageDepth);
     	System.out.println("Maximum depth of leaves: " + depthMax);
