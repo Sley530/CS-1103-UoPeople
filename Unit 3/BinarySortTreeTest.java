@@ -17,7 +17,7 @@ import java.util.Random;
  * @author Paul-Wesley Jeanty
  *
  */
-public class BinarySortTreeTest {
+public class RandomSortTreeTest {
 
 	/**
 	 * An object of type TreeNode represents one node in a binary tree of doubles.
@@ -172,4 +172,4 @@ public class BinarySortTreeTest {
     	System.out.println("Average depth of leaves: " + averageDepth);
     	System.out.println("Maximum depth of leaves: " + depthMax);
 	}
-}
+} //end of RandomSortTreeTest
