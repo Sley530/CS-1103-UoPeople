@@ -1,4 +1,4 @@
-package mines;
+package Unit_2;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -37,7 +37,7 @@ public class MineField extends JPanel {
 	private boolean userWon;  // when gameInprogress == false, this tells whether user won
 	
 	/**
-	 * Create a board that has 50 mines scatterd in it at random positions,
+	 * Create a board that has 50 mines scattered in it at random positions,
 	 * and start the first game.  This constructor just calls {@link #MineField(int)}
 	 * with a parameter value of 50.
 	 */
@@ -46,7 +46,7 @@ public class MineField extends JPanel {
 	}
 	
 	/**
-	 * Create a board that has a specified number of mines scatterd in it at 
+	 * Create a board that has a specified number of mines scattered in it at 
 	 * random positions, and start the first game.
 	 * @param mineCount the number of mines that are to be placed on the board.
 	 *   The value should be "reasonable" (not too large or too small), but no
@@ -66,7 +66,7 @@ public class MineField extends JPanel {
 	
 	/**
 	 * Returns the number of mines on the board.  This number is set when a
-	 * game begins, and does not change until a new game is startetd.
+	 * game begins, and does not change until a new game is started.
 	 */
 	public int getMineCount() {
 		return mineCount;
@@ -104,7 +104,7 @@ public class MineField extends JPanel {
 	/**
 	 * Draw the board, based on the current state of all the squares and on whether or
 	 * not the game is in progress.  This method is called by the system and is not meant
-	 * to be called directrly.
+	 * to be called directly.
 	 */
 	protected void paintComponent(Graphics g) {
 		g.setColor(Color.GRAY);
@@ -142,11 +142,11 @@ public class MineField extends JPanel {
 	}
 
 	/**
-	 * Beging a new game with a specified number of mines.  If a game is
+	 * Begin a new game with a specified number of mines.  If a game is
 	 * in progress, that game is aborted and no warning or error message is
 	 * given.
 	 * @param mineCount The number of mines to place on the board.  The value
-	 *   should be "reasonable"; see the comments on the construtor {@link #MineField(int)}.
+	 *   should be "reasonable"; see the comments on the constructor {@link #MineField(int)}.
 	 */
 	public void startGame(int mineCount) {
 		System.out.println("Start a game with " + mineCount + " mines.");
@@ -197,7 +197,7 @@ public class MineField extends JPanel {
 	}
 	
 	/**
-	 * This method is called when a square is visisted by the user.
+	 * This method is called when a square is visited by the user.
 	 */
 	private void visit( int row, int col ) {
 		if (mined[row][col]) {  // The user has stepped on a mine and gets blown up.
@@ -206,7 +206,7 @@ public class MineField extends JPanel {
 		}
 		else { // It's OK for the user to step on this square.  Mark it as visited.
 			mark(row,col);
-			if (state[ROWS - 1][COLS -1] == STATE_VISITED) { // User has reached the home sqaure!
+			if (state[ROWS - 1][COLS -1] == STATE_VISITED) { // User has reached the home square!
 				gameInProgress = false;
 				userWon = true;
 			}
@@ -242,7 +242,7 @@ public class MineField extends JPanel {
 	}
 	
 	/**
-	 * Tests whehter a new game board is valid.  This is called by startGame() to
+	 * Tests whether a new game board is valid.  This is called by startGame() to
 	 * decide whether to use a random board that it has created, or to discard
 	 * the board and try again.
 	 */
@@ -259,7 +259,26 @@ public class MineField extends JPanel {
 	 * Marks the square in position (row, col) as visited.
 	 */
 	private void mark(int row, int col) {
+		if (row < 0 || row >= ROWS || col < 0 || col >= COLS) {
+			return;
+		}
+		if (state[row][col] == STATE_VISITED) {
+			return;
+		}
+		
 		state[row][col] = STATE_VISITED;
+		
+		if (bombCount(row, col) > 0) {
+			return;
+		} else {
+		    mark(row - 1, col);
+		    mark(row + 1, col);
+	    	mark(row, col - 1);
+	    	mark(row, col + 1);
+	    	mark(row - 1, col - 1);
+	    	mark(row - 1, col + 1);
+	    	mark(row + 1, col - 1);
+	    	mark(row + 1, col + 1);
+		}
 	}
-	
 }
