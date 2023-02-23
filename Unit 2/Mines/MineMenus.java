@@ -1,4 +1,4 @@
-package mines;
+package Unit_2;
 
 import java.awt.event.ActionEvent;
 
