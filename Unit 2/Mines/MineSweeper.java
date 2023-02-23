@@ -1,4 +1,4 @@
-package mines;
+package Unit_2;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -14,7 +14,7 @@ import javax.swing.JFrame;
 public class MineSweeper {
 	
 	public static void main(String[] args) {
-		JFrame window = new JFrame("MineSweeper a la Mac");
+		JFrame window = new JFrame("MineSweeper");
 		MineField board = new MineField();
 		window.setContentPane(board);
 		window.setJMenuBar( new MineMenus(board) );
@@ -27,3 +27,4 @@ public class MineSweeper {
 	}
 
 }
+
