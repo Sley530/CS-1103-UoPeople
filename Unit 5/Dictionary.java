@@ -11,17 +11,18 @@ public class Dictionary {
 
 		Scanner filein;
 		Scanner userFile;
-		
-		try {
-			
-			filein = new Scanner(new File("src/Unit_5/words.txt")); //reading the "words.txt file from the package.
 
-			
+		try {
+			// Reading the words.txt file.
+			filein = new Scanner(new File("src/Unit_5/words.txt"));
+
+			// Creating the new dictionary data structure
 			HashSet<String> hash = new HashSet<>();
 
 			while (filein.hasNext()) {
 				String tk = filein.next();
 
+				// Adding words into dictionary from "words.txt"
 				hash.add(tk.toLowerCase());
 			}
 
@@ -42,12 +43,28 @@ public class Dictionary {
 		}
 	}
 
-	
+	/**
+	 * Stores the variations in a TreeSet, then
+	 * Returns the possible variations on the misspelled word.
+	 * Since the corrections are stored in a tree set, they are automatically
+	 * printed out in alphabetical order with no repeats.
+	 *
+	 * The possible corrections that the program considers are as follows:
+	 *
+	 * Delete any one of the letters from the misspelled word.
+	 * Change any letter in the misspelled word to any other letter.
+	 * Insert any letter at any point in the misspelled word.
+	 * Swap any two neighboring characters in the misspelled word.
+	 * Insert a space at any point in the misspelled word (and check that both
+	 * of the words that are produced are in the dictionary)
+	 */
 
 	static TreeSet<String> corrections(String badWord, HashSet<String> dictionary) {
 
 		TreeSet<String> tree = new TreeSet<String>();
 
+		// Delete any one of the letters from the misspelled word, then check if
+		// exist in the dictionary.
 
 		for (int i = 0; i < badWord.length(); i++) {
 			String s = badWord.substring(0, i) + badWord.substring(i + 1);
@@ -56,6 +73,8 @@ public class Dictionary {
 			}
 		}
 
+		// Change any letter in the misspelled word to any other letter , then
+		// check if exist in the dictionary.
 
 		for (int i = 0; i < badWord.length(); i++) {
 			for (char ch = 'a'; ch <= 'z'; ch++) {
@@ -66,7 +85,8 @@ public class Dictionary {
 				}
 			}
 		}
-	
+		// Insert any letter at any point in the misspelled word ,then check if
+		// exist in the dictionary.
 
 		for (int i = 0; i <= badWord.length(); i++) {
 			for (char ch = 'a'; ch <= 'z'; ch++) {
@@ -77,6 +97,9 @@ public class Dictionary {
 			}
 		}
 
+		// Swap any two neighboring characters in the misspelled word, then
+		// check if exist in the dictionary.
+
 		for (int i = 0; i < badWord.length() - 1; i++) {
 			String s = badWord.substring(0, i) + badWord.substring(i + 1, i + 2)
 							+ badWord.substring(i, i + 1)
@@ -86,18 +109,23 @@ public class Dictionary {
 			}
 		}
 
-
+		// Insert a space at any point in the misspelled word (and check that
+		// both of the words that are produced are in the dictionary)
 
 		for (int i = 1; i < badWord.length(); i++) {
 			String stringInput = badWord.substring(0, i) + " "
 							+ badWord.substring(i);
 			String tempString = "";
 
+			// break a string into tokens and add it to tempWords
 			StringTokenizer tempWords = new StringTokenizer(stringInput);
 
+			// Loop over all words in tempWords.
 			while (tempWords.hasMoreTokens()) {
+				// Store each word in a temp string.
 				String stringWord1 = tempWords.nextToken();
 				String stringWord2 = tempWords.nextToken();
+				// Check if temp words exist in dictionary otherwise break
 				if (dictionary.contains(stringWord1)
 								&& dictionary.contains(stringWord2)) {
 					tempString = stringWord1 + " " + stringWord2;
@@ -113,7 +141,11 @@ public class Dictionary {
 		return tree;
 	}
 
-	// user selecting input
+	/**
+	 * Lets the user select an input file using a standard file
+	 * selection dialog box. If the user cancels the dialog
+	 * without selecting a file, the return value is null.
+	 */
 	static File getInputFileNameFromUser() {
 		JFileChooser fileDialog = new JFileChooser();
 		fileDialog.setDialogTitle("Select File for Input");
