@@ -155,4 +155,4 @@ public class Dictionary {
 		else
 			return fileDialog.getSelectedFile();
 	}
-}
+} //end of Dictionary
