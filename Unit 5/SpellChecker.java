@@ -297,4 +297,4 @@ public class SpellChecker {
        else
           return fileDialog.getSelectedFile();
     }
-} // end of SpellChecker
+} // end of SpellChecker.
