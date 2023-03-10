@@ -110,7 +110,7 @@ public class Dictionary {
 		}
 
 		// Insert a space at any point in the misspelled word (and check that
-		// both of the words that are produced are in the dictionary)
+		// both of the words that are produced are in the dictionary).
 
 		for (int i = 1; i < badWord.length(); i++) {
 			String stringInput = badWord.substring(0, i) + " "
