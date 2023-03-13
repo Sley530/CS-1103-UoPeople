@@ -12,3 +12,5 @@ By implementing them on some interesting mini projects.
 - UNIT 5: More Generic Programming
 - UNIT 6:
 - UNIT 7:
+- UNIT 8:
+- 
