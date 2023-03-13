@@ -13,4 +13,3 @@ By implementing them on some interesting mini projects.
 - UNIT 6: Files and Networking; Advanced GUI Programming
 - UNIT 7: Actions and Buttons; Complex Components and MVC
 - UNIT 8:
-- 
