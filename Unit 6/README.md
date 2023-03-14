@@ -1,2 +1,2 @@
 # Unit 6
-Topic:Files
+Topic: Files and Networking; Advanced GUI Programming
