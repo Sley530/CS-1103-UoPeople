@@ -11,7 +11,7 @@ import java.applet.*;
 public class TestStopWatchRunner extends Applet {
 
 public void init() {
-   
+
    StopWatchRunner watch = new StopWatchRunner();
    watch.setFont( new Font("SansSerif", Font.BOLD, 24) );
    watch.setBackground(Color.white);
@@ -19,7 +19,7 @@ public void init() {
    setBackground(Color.white);
    setLayout(new BorderLayout() );
    add(watch, BorderLayout.CENTER);
-   
+yy
 }
 
 }
