@@ -6,7 +6,7 @@ By implementing them on some interesting mini projects.
 
 ## Topics Covered in Each Unit
 - UNIT 1: Exceptions, the switch statement, Analysis of Algorithms.
-- UNIT 2: Recursion and Linked Lists
+- UNIT 2: Recursion and Linked Lists.
 - UNIT 3: ADTs, Stacks and Queues
 - UNIT 4: Recursive Descent Parsers and Generic Programming
 - UNIT 5: More Generic Programming
