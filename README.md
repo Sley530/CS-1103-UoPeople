@@ -11,5 +11,5 @@ By implementing them on some interesting mini projects.
 - UNIT 4: Recursive Descent Parsers and Generic Programming.
 - UNIT 5: More Generic Programming.
 - UNIT 6: Files and Networking; Advanced GUI Programming.
-- UNIT 7: Actions and Buttons; Complex Components and MVC
+- UNIT 7: Actions and Buttons; Complex Components and MVC.
 - UNIT 8: Some GUI Programming
